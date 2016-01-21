@@ -1,0 +1,12 @@
+{
+  "author": "Matt Farmer <work@mattfarmer.net>",
+  "dependencies": {
+  },
+  "description": "Source code for Academy X's Node.js class",
+  "devDependencies": {
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "name": "learn-node",
+  "version": "1.0.0"
+}
