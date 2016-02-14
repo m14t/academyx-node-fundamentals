@@ -5,11 +5,14 @@
   },
   "description": "Source code for Academy X's Node.js class",
   "devDependencies": {
+    "node-inspector": "^0.12.6",
+    "supervisor": "^0.9.1"
   },
   "license": "ISC",
   "main": "index.js",
   "name": "learn-node",
   "scripts": {
+    "dev": "supervisor --debug index.js",
     "start": "node index.js"
   },
   "version": "1.0.0"
