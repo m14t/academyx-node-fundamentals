@@ -7,14 +7,14 @@ const PORT = 3000;
 
 http.createServer(function (req, res) {
 
-  res.writeHead(
-    status('OK'),
-    {
-      'Content-Type': 'text/plain'
-    }
-  );
+    res.writeHead(
+        status('OK'),
+        {
+            'Content-Type': 'text/plain'
+        }
+    );
 
-  res.end('Hello World\n');
+    res.end('Hello World\n');
 
 }).listen(PORT);
 
