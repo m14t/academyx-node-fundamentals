@@ -9,5 +9,8 @@
   "license": "ISC",
   "main": "index.js",
   "name": "learn-node",
+  "scripts": {
+    "start": "node index.js"
+  },
   "version": "1.0.0"
 }
