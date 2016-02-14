@@ -1,21 +1,14 @@
 "use strict";
 
-let http = require('http');
-let status = require('statuses');
+var express = require('express');
+var app = express();
 
 const PORT = 3000;
 
-http.createServer(function (req, res) {
-
-    res.writeHead(
-        status('OK'),
-        {
-            'Content-Type': 'text/plain'
-        }
-    );
-
+app.get('/', function (req, res) {
     res.end('Hello World\n');
+});
 
-}).listen(PORT);
-
-console.log(`Server running at http://0.0.0.0:${PORT}/`);
+app.listen(PORT, function () {
+    console.log(`Server running at http://0.0.0.0:${PORT}/`);
+});

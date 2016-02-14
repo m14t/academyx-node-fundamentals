@@ -1,7 +1,7 @@
 {
   "author": "Matt Farmer <work@mattfarmer.net>",
   "dependencies": {
-    "statuses": "^1.2.1"
+    "express": "^4.13.4"
   },
   "description": "Source code for Academy X's Node.js class",
   "devDependencies": {
