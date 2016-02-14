@@ -1,12 +1,14 @@
 "use strict";
 
 let http = require('http');
+let status = require('statuses');
+
 const PORT = 3000;
 
 http.createServer(function (req, res) {
 
   res.writeHead(
-    200,
+    status('OK'),
     {
       'Content-Type': 'text/plain'
     }
