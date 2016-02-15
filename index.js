@@ -5,8 +5,10 @@ var app = express();
 
 const PORT = 3000;
 
+app.set('view engine', 'jade');
+
 app.get('/', function (req, res) {
-    res.end('Hello World\n');
+    res.render('index');
 });
 
 app.listen(PORT, function () {

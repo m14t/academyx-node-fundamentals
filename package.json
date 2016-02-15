@@ -1,7 +1,8 @@
 {
   "author": "Matt Farmer <work@mattfarmer.net>",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
   },
   "description": "Source code for Academy X's Node.js class",
   "devDependencies": {
