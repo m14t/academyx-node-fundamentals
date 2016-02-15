@@ -8,7 +8,7 @@ const PORT = 3000;
 app.set('view engine', 'jade');
 
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('index', {msg: 'Hello World'});
 });
 
 app.listen(PORT, function () {
