@@ -7,6 +7,13 @@ const PORT = 3000;
 
 app.set('view engine', 'jade');
 
+app.use(
+    '/static',
+    [
+        express.static('node_modules/jquery/dist'),
+    ]
+);
+
 app.use('/', require('./controllers/homepage'));
 
 app.listen(PORT, function () {

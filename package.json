@@ -2,7 +2,8 @@
   "author": "Matt Farmer <work@mattfarmer.net>",
   "dependencies": {
     "express": "^4.13.4",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "jquery": "^2.2.0"
   },
   "description": "Source code for Academy X's Node.js class",
   "devDependencies": {
