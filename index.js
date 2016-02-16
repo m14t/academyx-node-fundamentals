@@ -7,9 +7,7 @@ const PORT = 3000;
 
 app.set('view engine', 'jade');
 
-app.get('/', function (req, res) {
-    res.render('index', {msg: 'Hello World'});
-});
+app.use('/', require('./controllers/homepage'));
 
 app.listen(PORT, function () {
     console.log(`Server running at http://0.0.0.0:${PORT}/`);
