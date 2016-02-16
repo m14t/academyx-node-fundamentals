@@ -1,0 +1,29 @@
+extends ../layout.jade
+
+block title
+    title Login
+
+block content
+    h1 Login
+    form(id="login")
+        label(for="username") Username:
+        input(id="username")
+        input(type="submit")
+
+append footer_js
+    script.
+        $(function() {
+            var $login = $('#login');
+            var $username = $login.find('#username');
+
+            // Set the previous used value
+            $username.val(
+                localStorage.getItem('username')
+            );
+
+            // Save the submitted value
+            $login.submit(function() {
+                localStorage.setItem('username', $username.val());
+                return false;
+            });
+        });

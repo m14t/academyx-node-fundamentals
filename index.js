@@ -15,6 +15,7 @@ app.use(
 );
 
 app.use('/', require('./controllers/homepage'));
+app.use('/login', require('./controllers/authorization'));
 
 app.listen(PORT, function () {
     console.log(`Server running at http://0.0.0.0:${PORT}/`);
