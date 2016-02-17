@@ -11,6 +11,7 @@ app.use(
     '/static',
     [
         express.static('node_modules/jquery/dist'),
+        express.static('node_modules/socket.io-client'),
     ]
 );
 
