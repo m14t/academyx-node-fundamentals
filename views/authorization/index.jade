@@ -24,6 +24,8 @@ append footer_js
             // Save the submitted value
             $login.submit(function() {
                 localStorage.setItem('username', $username.val());
+
+                window.location = '/chat'
                 return false;
             });
         });

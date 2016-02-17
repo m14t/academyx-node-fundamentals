@@ -1,0 +1,66 @@
+extends ../layout.jade
+
+block content
+    ul#chat
+
+    form#message(autocomplete="off")
+        input#body
+
+append footer_js
+    script(src="/static/socket.io.js")
+    script.
+        var $chat;
+        var username = localStorage.getItem('username');
+
+        // make sure we have a username
+        if (!username) {
+            window.location = '/login';
+        }
+
+        function addMessage(message) {
+            var usernameClasses = 'username';
+
+            if (username === message.username) {
+                usernameClasses += ' self';
+            }
+            var html = `
+                <li class="message">
+                    <div class="${usernameClasses}">${message.username}</div>
+                    <div class="body">${message.body}</div>
+                </li>
+            `
+            $chat.append(html);
+        }
+
+        $(function() {
+            $chat = $('#chat')
+            var $message = $('#message');
+            var $body = $message.find('#body');
+
+            var socket = io();
+            socket.on('message', addMessage);
+
+            // Save the submitted value
+            $message.submit(function() {
+                var message = {
+                    username: username,
+                    body: $body.val(),
+                };
+
+                addMessage(message);
+                socket.emit('message', message);
+
+                // Clear out the input
+                $body.val('');
+
+                return false;
+            });
+        });
+
+append head_style
+    style.
+        #chat { list-style: none; }
+        .message { display: flex; margin-bottom: 0.5em; }
+        .username { min-width: 5em; margin-right: 1em; color: red; }
+        .username.self { color: blue; }
+        #message > #body { width: 100%; }

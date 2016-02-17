@@ -16,8 +16,16 @@ app.use(
 );
 
 app.use('/', require('./controllers/homepage'));
+app.use('/chat', require('./controllers/chat'));
 app.use('/login', require('./controllers/authorization'));
 
-app.listen(PORT, function () {
+var server = app.listen(PORT, function () {
     console.log(`Server running at http://0.0.0.0:${PORT}/`);
+});
+
+var io = require('socket.io').listen(server);
+io.on('connection', function(socket) {
+    socket.on('message', function(message) {
+        socket.broadcast.emit('message', message)
+    });
 });
